@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//criar uma migration -> yarn dev prisma migrate dev
+model Carta{
+  id String @id @default(uuid())
+  descricao String
+  img_carta String
+  poder_ataque Int
+  poder_defesa Int
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("carta")
+  decks Deck[]
+}
+
+model Usuario{
+  id String @id @default(uuid())
+  login String
+  senha String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("usuario")
+  decks Deck[]
+}
+
+model Deck{
+  id String @id @default(uuid()) 
+  sinalizador String
+
+  carta Carta @relation(fields: [carta_id], references: [id])
+  usuario Usuario @relation(fields: [usuario_id], references: [id])
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("deck")
+  carta_id String
+  usuario_id String
+
+}
+
+//parei no 3:47  video 65
