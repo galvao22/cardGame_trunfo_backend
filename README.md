@@ -55,7 +55,7 @@ Para o cadastro de cartas salve as imagens em 'src/assets/cards_pokemon'. Utiliz
 Para realizar login, fazer uma requisição post para 'http://XXXX:3333/login'.
 ```JSON
 {
-	"login": "vini@teste.com",
+	"login": "user@teste.com",
 	"senha": "123456"
 }
 ```
