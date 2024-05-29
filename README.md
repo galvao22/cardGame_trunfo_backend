@@ -25,6 +25,7 @@
 ## Funcionalidades
 
  - [x] Disponibilizar rotas para o funcionamento do Aplicativo Mobile
+ - [x] [Repositório do Aplicativo Mobile](https://github.com/galvao22/cardGame_trunfo_mobile.git)
 
 ## Como rodar este projeto
 
@@ -41,13 +42,21 @@ $ npm run dev
 
 ## Outras informações
 
-Para o cadastro de cartas salve as imagens em 'src/assets/cards_pokemon'. Utilize o insominia ou outro programa de sua escolha, fazendo uma requisição post com os atributos a seguir para 'http://XXXX:3333/carta'
+Para o cadastro de cartas salve as imagens em 'src/assets/cards_pokemon'. Utilize o insominia ou outro programa de sua escolha, fazendo uma requisição post com os atributos a seguir para 'http://XXXX:3333/carta'.
 ```JSON
 {
 	"descricao": "Nome",
 	"img_carta": "imagem.png",
 	"poder_ataque": 10,
 	"poder_defesa": 8
+}
+```
+
+Para realizar login, fazer uma requisição post para 'http://XXXX:3333/login'.
+```JSON
+{
+	"login": "vini@teste.com",
+	"senha": "123456"
 }
 ```
 
